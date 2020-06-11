@@ -15,9 +15,9 @@ const ErrorBox = ({ id, decreaseTimer, removeError, errors }) => {
       setInterval(() => {
         decreaseTimer({
           id,
-          decreasingAmount: 1,
+          decreasingAmount: 20,
         });
-      }, 50);
+      }, 1000);
     }
 
     decreaseTimerUntilSelfDestroy();

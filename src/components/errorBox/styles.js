@@ -2,22 +2,22 @@ import styled, { keyframes } from 'styled-components';
 
 const comeFromEndOfScreen = keyframes`
   from {
-    left: 100vh;
+    left: 100vw;
     transform: translateX(300px);
   }
 
   to {
-    left: 100vh;
+    left: 100vw;
   }
 `;
 
 const getOutOfScreen = keyframes`
   from {
-    left: 100vh;
+    left: 100vw;
   }
 
   to {
-    left: 100vh;
+    left: 100vw;
     transform: translateX(300px);
   }
 `;
@@ -27,8 +27,8 @@ export const ProgressBar = styled.div`
   height: 3px;
   background: #c77676;
   margin-top: 20px;
-  transition: all 0.05s linear;
-  display: ${({ timer }) => (timer <= 0 ? 'none' : '')};
+  transition: all 0.5s ease-in-out;
+  display: ${({ timer }) => (timer <= -10 ? 'none' : '')};
 `;
 
 export const Container = styled.div`

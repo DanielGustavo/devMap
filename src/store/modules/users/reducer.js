@@ -21,8 +21,6 @@ export default function users(state = INITAL_STATE, action) {
           action.payload.data,
         ],
       };
-    case 'users/ADD_FAILURE':
-      return { ...state, loading: false, error: action.payload.error };
     case 'users/ADD_REQUEST':
       return { ...state, loading: true, error: null };
     case 'users/ADD_SUCCESS':

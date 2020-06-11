@@ -9,11 +9,6 @@ export const Creators = {
     payload: { data },
   }),
 
-  addUserFailure: (error) => ({
-    type: 'users/ADD_FAILURE',
-    payload: { error },
-  }),
-
   updateUser: (data) => ({
     type: 'users/UPDATE',
     payload: { data },

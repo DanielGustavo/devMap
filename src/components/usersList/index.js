@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 import { Container, CloseIcon } from './styles';
 import { Creators as UsersCreators } from '../../store/modules/users/actions';
 
-const UsersList = ({ users, usersError, removeUser }) => (
+const UsersList = ({ users, removeUser }) => (
   <Container>
     {users.map((user) => (
       <div key={user.id} className="user">
@@ -21,13 +21,11 @@ const UsersList = ({ users, usersError, removeUser }) => (
         />
       </div>
     ))}
-    {!!usersError && <span className="error">{usersError}</span>}
   </Container>
 );
 
 const mapStateToProps = (state) => ({
   users: state.users.users,
-  usersError: state.users.error,
 });
 
 const mapDispatchToProps = (dispatch) =>
@@ -46,12 +44,7 @@ UsersList.propTypes = {
       }).isRequired,
     })
   ).isRequired,
-  usersError: PropTypes.oneOfType([PropTypes.string, PropTypes.oneOf([null])]),
   removeUser: PropTypes.func.isRequired,
-};
-
-UsersList.defaultProps = {
-  usersError: null,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(UsersList);

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
+
 import { Container, CloseIcon } from './styles';
 import { Creators as UsersCreators } from '../../store/modules/users/actions';
 
@@ -46,6 +47,7 @@ UsersList.propTypes = {
     })
   ).isRequired,
   usersError: PropTypes.oneOfType([PropTypes.string, PropTypes.oneOf([null])]),
+  removeUser: PropTypes.func.isRequired,
 };
 
 UsersList.defaultProps = {

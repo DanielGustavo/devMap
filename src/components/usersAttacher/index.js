@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
+
 import { Creators as UsersCreators } from '../../store/modules/users/actions';
 import { Creators as UsersAttacherCreators } from '../../store/modules/usersAttacher/actions';
 import { Container, Button } from './styles';

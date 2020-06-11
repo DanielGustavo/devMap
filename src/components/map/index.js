@@ -3,6 +3,7 @@ import MapGL, { Marker } from 'react-map-gl';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
+
 import { Creators as UsersAttacherCreators } from '../../store/modules/usersAttacher/actions';
 import { Avatar } from './styles';
 

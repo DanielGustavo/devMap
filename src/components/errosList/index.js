@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 import { Container } from './styles';
 import ErrorBox from '../errorBox';
 
@@ -14,5 +16,15 @@ const ErrorsList = ({ errors }) => (
 const mapStateToProps = (state) => ({
   errors: state.errors,
 });
+
+ErrorsList.propTypes = {
+  errors: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      message: PropTypes.string.isRequired,
+      timer: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+};
 
 export default connect(mapStateToProps)(ErrorsList);

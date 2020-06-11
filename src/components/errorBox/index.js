@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
+
 import { Container, ProgressBar } from './styles';
 import { Creators as ErrorsCreators } from '../../store/modules/errors/actions';
 
@@ -46,5 +48,18 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators(ErrorsCreators, dispatch);
+
+ErrorBox.propTypes = {
+  id: PropTypes.number.isRequired,
+  decreaseTimer: PropTypes.func.isRequired,
+  removeError: PropTypes.func.isRequired,
+  errors: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      message: PropTypes.string.isRequired,
+      timer: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ErrorBox);
